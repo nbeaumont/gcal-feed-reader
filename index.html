@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery Google Public Calendar Feed Reader</title>
+<link href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+<link href="_stylesheets/gcal-feed-reader.css" rel="stylesheet" type="text/css" media="all">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="_javascripts/moment.min.js"></script>
+<script type="text/javascript" src="_javascripts/jquery.linkify.min.js"></script>
+<script type="text/javascript" src="_javascripts/mailmask.min.js"></script>
+<script type="text/javascript" src="_javascripts/jquery.gcal-feed-reader.js"></script>
+</head>
+<body>
+<div class="gCalFeedReader"></div>
+<script type="text/javascript">
+jQuery(function(e) {
+    /*! Settings for the future events list (will overwrite the default settings) */
+    e("#gcfr-futureEventsList").gCalFeedReader({
+        apiKey: 'AIzaSyDCgE5k8RmNM4uvX1j9vsZCjremXVhM83Y', // replace with your own Google API key
+        calendarId: "4dj3qghfgp23sjhe12c2b3505s@group.calendar.google.com", // replace with your own Google public calendar id
+        futureEventsOnly: false,
+        sortDescending: false,
+        eventsHeader: 'Upcoming Events'
+    });
+    /*! Settings for the past events list (will overwrite the default settings)*/
+    e("#gcfr-pastEventsList").gCalFeedReader({
+        apiKey: 'AIzaSyDCgE5k8RmNM4uvX1j9vsZCjremXVhM83Y', // replace with your own Google API key
+        calendarId: "4dj3qghfgp23sjhe12c2b3505s@group.calendar.google.com", // replace with your own Google public calendar id
+        pastEventsOnly: true,
+        sortDescending: true,
+        eventsHeader: 'Past Events'
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+/* CSS Document */
+@media only screen and (max-width: 480px) {
+
+#gcfr-futureEventsColumn, #gcfr-pastEventsColumn {
+	display: block;
+	float: left;
+	width: 100%;
+	padding: 1em;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	overflow: hidden
+}
+
+#gcfr-futureEventsColumn, #gcfr-pastEventsColumn {
+	clear: both
+}
+
+#gcfr-pastEventsColumn {
+	border-top: 8px solid #CCC
+}
+}
+
+@media only screen and (min-width: 481px) {
+
+#gcfr-futureEventsColumn, #gcfr-pastEventsColumn {
+	display: block;
+	float: left;
+	width: 50%;
+	padding: 1em;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	overflow: hidden
+}
+
+#gcfr-futureEventsColumn {
+	clear: both
+}
+
+#gcfr-pastEventsColumn {
+	clear: none
+}
+}
+
+div.gCalFeedReader {
+	display: block;
+	float: left;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.gcfr-allEventsWrapper {
+	display: none;
+	float: left;
+	clear: both;
+	width: 100%;
+	padding: 0;
+	margin: 0
+}
+
+.gcfr-eventTitle, .gcfr-eventDate, .gcfr-eventLocation, .gcfr-eventDescription, .gcfr-loaderWrapper, .gcfr-eventsListWrapper {
+	word-wrap: break-word;
+	float: left;
+	clear: both;
+	width: 100%;
+	padding: 0;
+	margin: 0
+}
+
+ul.gcfr-eventsList {
+	float: left;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	list-style: none
+}
+
+ul.gcfr-eventsList li {
+	float: left;
+	width: 100%;
+	padding-top: 0;
+	border-top: 1px solid #ccc
+}
+
+ul.gcfr-eventsList li:first-child {
+	padding-top: 0;
+	border-top: none
+}
+
+.gcfr-eventLocation .fa-map-marker {
+	margin-left: .5em
+}
+
+/*! "loading..." text animation */
+p.gcfr-loader {
+	text-align: center;
+	font-weight: 700
+}
+@-webkit-keyframes opacity {
+ 0% {
+opacity:1
+}
+100% {
+opacity:0
+}
+}
+@-moz-keyframes opacity {
+ 0% {
+opacity:1
+}
+100% {
+opacity:0
+}
+}
+
+p.gcfr-loader span {
+	-webkit-animation-name: opacity;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-name: opacity;
+	-moz-animation-duration: 1s;
+	-moz-animation-iteration-count: infinite
+}
+
+p.gcfr-loader span:nth-child(2) {
+	-webkit-animation-delay: 100ms;
+	-moz-animation-delay: 100ms
+}
+
+p.gcfr-loader span:nth-child(3) {
+	-webkit-animation-delay: 300ms;
+	-moz-animation-delay: 300ms
+}
