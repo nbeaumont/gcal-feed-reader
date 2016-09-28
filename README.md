@@ -26,12 +26,12 @@ Include the following HTML code into the head section of your document.
 ```html
 
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link href="_stylesheets/gcal-feed-reader.css" rel="stylesheet" type="text/css" media="all">
+<link href="styles/gcal-feed-reader.css" rel="stylesheet" type="text/css" media="all">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
-<script type="text/javascript" src="_javascripts/moment.js"></script> 
-<script type="text/javascript" src="_javascripts/jquery.linkify.js"></script> 
-<script type="text/javascript" src="_javascripts/mailmask.js"></script> 
-<script type="text/javascript" src="_javascripts/jquery.gcal-feed-reader.js"></script> 
+<script type="text/javascript" src="scripts/moment.js"></script> 
+<script type="text/javascript" src="scripts/jquery.linkify.js"></script> 
+<script type="text/javascript" src="scripts/mailmask.js"></script> 
+<script type="text/javascript" src="scripts/jquery.gcal-feed-reader.js"></script> 
 
 ```
 
