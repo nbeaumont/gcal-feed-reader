@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Gcal-feed-reader by nbeaumont</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Gcal-feed-reader</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/nbeaumont/gcal-feed-reader" class="btn">View on GitHub</a>
+      <a href="https://github.com/nbeaumont/gcal-feed-reader/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/nbeaumont/gcal-feed-reader/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h4>
+<a id="nbeaumontgithubio" class="anchor" href="#nbeaumontgithubio" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>nbeaumont.github.io</h4>
+
+<h1>
+<a id="google-public-calendar-feed-reader" class="anchor" href="#google-public-calendar-feed-reader" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Google Public Calendar Feed Reader</h1>
+
+<p>A jQuery plugin to format and display public Google calendar feeds as a list of events on a webpage, using the <a href="https://developers.google.com/google-apps/calendar/?hl=en">Google Calendar API V3</a>.</p>
+
+<p>It is based on bradoyler's <a href="https://github.com/bradoyler/GoogleCalReader-jquery-plugin">GoogleCalReader-jquery-plugin</a>.</p>
+
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+
+<p>This plugin displays a list of upcoming events in a descending order, and a list of past events in an ascending order.</p>
+
+<h2>
+<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="http://htmlpreview.github.io/?https://rawgit.com/nbeaumont/gcal-feed-reader/master/index.html">Demo</a>
+</h2>
+
+<h2>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dependencies</h2>
+
+<ul>
+<li>  <a href="https://fortawesome.github.io/Font-Awesome/">Font Awesome</a>, an iconic font and CSS tookit.</li>
+<li>  <a href="https://github.com/moment/moment/">moment.js</a>, a JavaScript date library for parsing, validating, manipulating, and formatting dates.</li>
+<li>  SoapBox's <a href="https://github.com/SoapBox/linkifyjs">linkifyjs</a>, a jQuery plugin for finding URLs in plain-text and converting them to HTML links.</li>
+<li>  <a href="https://libraries.io/bower/mailmask">mailmask</a>, a jQuery plugin to mask email links on your site and protect them from spam bots.</li>
+</ul>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Include the following HTML code into the head section of your document.</p>
+
+<div class="highlight highlight-text-html-basic"><pre>
+&lt;<span class="pl-ent">link</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css<span class="pl-pds">"</span></span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/css<span class="pl-pds">"</span></span>&gt;
+&lt;<span class="pl-ent">link</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>styles/gcal-feed-reader.css<span class="pl-pds">"</span></span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/css<span class="pl-pds">"</span></span> <span class="pl-e">media</span>=<span class="pl-s"><span class="pl-pds">"</span>all<span class="pl-pds">"</span></span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt; 
+&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>scripts/moment.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt; 
+&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>scripts/jquery.linkify.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt; 
+&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>scripts/mailmask.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt; 
+&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>scripts/jquery.gcal-feed-reader.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt; 
+</pre></div>
+
+<p>To initialize the plugin, insert the following JavaScript code just before the body closing tag.</p>
+
+<div class="highlight highlight-source-js"><pre>
+<span class="pl-en">jQuery</span>(<span class="pl-k">function</span>() {
+    <span class="pl-c">/*! Settings for the future events list (will overwrite the default settings) */</span>
+    <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#gcfr-futureEventsList<span class="pl-pds">"</span></span>).<span class="pl-en">gCalFeedReader</span>({
+        apiKey<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>AIzaSyDCgE5k8RmNM4uvX1j9vsZCjremXVhM83Y<span class="pl-pds">'</span></span>, <span class="pl-c">// replace with your own Google API key</span>
+        calendarId<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>4dj3qghfgp23sjhe12c2b3505s@group.calendar.google.com<span class="pl-pds">"</span></span>, <span class="pl-c">// replace with your own Google public calendar ID</span>
+        futureEventsOnly<span class="pl-k">:</span> <span class="pl-c1">true</span>,
+        sortDescending<span class="pl-k">:</span> <span class="pl-c1">false</span>,
+        eventsHeader<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Upcoming Events<span class="pl-pds">'</span></span>
+    });
+    <span class="pl-c">/*! Settings for the past events list (will overwrite the default settings)*/</span>
+    <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#gcfr-pastEventsList<span class="pl-pds">"</span></span>).<span class="pl-en">gCalFeedReader</span>({
+        apiKey<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>AIzaSyDCgE5k8RmNM4uvX1j9vsZCjremXVhM83Y<span class="pl-pds">'</span></span>, <span class="pl-c">// replace with your own Google API key</span>
+        calendarId<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>4dj3qghfgp23sjhe12c2b3505s@group.calendar.google.com<span class="pl-pds">"</span></span>, <span class="pl-c">// replace with your own Google public calendar ID</span>
+        pastEventsOnly<span class="pl-k">:</span> <span class="pl-c1">true</span>,
+        sortDescending<span class="pl-k">:</span> <span class="pl-c1">true</span>,
+        eventsHeader<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Past Events<span class="pl-pds">'</span></span>
+    });
+});
+</pre></div>
+
+<p>Include the following HTML code into the body of your document.</p>
+
+<div class="highlight highlight-text-html-basic"><pre>
+&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>gCalFeedReader<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
+</pre></div>
+
+<p>Replace the apiKey option with your own Google API key. You can get a Google api key by navigating to the <a href="https://console.developers.google.com/">Google Developpers Console</a>.</p>
+
+<p>Replace the calendarId option with your own Google public calendar id.</p>
+
+<p>Make sure you Google calendar is public.</p>
+
+<p>Infos about creating and managing a public Google calendar can be found <a href="https://support.google.com/calendar/answer/37083?hl=en">here</a>.</p>
+
+<h2>
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Options</h2>
+
+<table width="100%" border="1" cellpadding="8" cellspacing="4">
+
+<tbody>
+
+<tr>
+
+<th scope="col">Name</th>
+
+<th scope="col">Type</th>
+
+<th scope="col">Description</th>
+
+<th scope="col">Default Value</th>
+
+</tr>
+
+<tr>
+
+<td>apiKey</td>
+
+<td>string</td>
+
+<td>Option that lets you enter your Google Calendar API key.</td>
+
+<td>undefined</td>
+
+</tr>
+
+<tr>
+
+<td>calendarId</td>
+
+<td>string</td>
+
+<td>Option that lets you enter the ID of the Google Calendar whose events will be displayed.</td>
+
+<td>undefined</td>
+
+</tr>
+
+<tr>
+
+<td>futureEventsOnly</td>
+
+<td>boolean</td>
+
+<td>Option that determines whether or not only future events should be displayed. If set to false past and future events from the calendar will be displayed. If set to true only future events will be.</td>
+
+<td>undefined</td>
+
+</tr>
+
+<tr>
+
+<td>pastEventsOnly</td>
+
+<td>boolean</td>
+
+<td>Option that determines whether or not only past events should be displayed. If set to false past and future events from the calendar will be displayed. If set to true only past events will be.</td>
+
+<td>undefined</td>
+
+</tr>
+
+<tr>
+
+<td>eventsHeader</td>
+
+<td>string</td>
+
+<td>Option that lets you specify a text header for the list of events to be displayed.</td>
+
+<td>undefined</td>
+
+</tr>
+
+<tr>
+
+<td>errorMsg</td>
+
+<td>string</td>
+
+<td>Option that lets you specify an error message if the Ajax request fails.</td>
+
+<td>the request failed</td>
+
+</tr>
+
+<tr>
+
+<td>errorMsgLocation</td>
+
+<td>string</td>
+
+<td>Option that lets you specify a text message to be displayed if an event location hasn't been defined in Google calendar.</td>
+
+<td>no location to display</td>
+
+</tr>
+
+<tr>
+
+<td>startDateFormat</td>
+
+<td>selector</td>
+
+<td>A selector which identifies the format to use for displaying the events starting dates and times.  
+The selector longDate+startingTime displays the day of the Week (Sunday Monday ... Friday Saturday), the Month (January February ... November December), the Day of the Month (1 2 ... 30 31), the year (1970 1971 ... 2029 2030), and the time (H:MM AM PM). An example of a date and a time displayed using this format will look like "Sunday November 8, 2015 8:30 PM".  
+The selector shortDate+startingTime displays the Month as a number (1 2 ... 11 12), the Day of the Month (1 2 ... 30 31), the year (1970 1971 ... 2029 2030), and the time (H:MM AM PM). An example of a date and a time displayed using this format will look like: "11/8/2015 8:30 PM".  
+</td>
+
+<td>longDate+startingTime</td>
+
+</tr>
+
+<tr>
+
+<td>endDateFormat</td>
+
+<td>selector</td>
+
+<td>A selector which identifies the format to use for displaying the events ending dates and times.  
+The selector longDate+endingTime uses the same format as longDate+startingTime.  
+The selector shortDate+endingTime uses the same format as shortDate+startingTime.  
+</td>
+
+<td>longDate+endingTime</td>
+
+</tr>
+
+<tr>
+
+<td>timeZone</td>
+
+<td>string</td>
+
+<td>Option that lets you set the time zone used in the response, formatted as an IANA Time Zone Database name, e.g. "Europe/Zurich".</td>
+
+<td>America/New_York</td>
+
+</tr>
+
+<tr>
+
+<td>maxEvents</td>
+
+<td>integer</td>
+
+<td>The maximum number of events to display.</td>
+
+<td>25</td>
+
+</tr>
+
+<tr>
+
+<td>singleEvents</td>
+
+<td>boolean</td>
+
+<td>Option that determines whether or not to expand recurring events into instances and only return single one-off events and instances of recurring events, but not the underlying recurring events themselves.</td>
+
+<td>true</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<p>For more infos, check the <a href="https://developers.google.com/google-apps/calendar/?hl=en">Google Calendar API</a> documentation.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/nbeaumont/gcal-feed-reader">Gcal-feed-reader</a> is maintained by <a href="https://github.com/nbeaumont">nbeaumont</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
