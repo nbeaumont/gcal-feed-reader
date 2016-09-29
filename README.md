@@ -8,7 +8,13 @@ It is based on bradoyler's [GoogleCalReader-jquery-plugin](https://github.com/br
 
 ## Features
 
-This plugin displays a list of upcoming events in a descending order, and a list of past events in an ascending order.
+*   Displays a list of upcoming events in a descending order, and a list of past events in an ascending order.
+
+*   Converts automatically the title of each event into an absolute link to the event in the Google Calendar Web UI.
+
+*   Converts automatically URLs in plain-text into HTML links, and masks email addresses to protect them from spam bots.
+
+*   Converts automatically each event address into a HTML link to a Google map.
 
 ## [Demo](http://htmlpreview.github.io/?https://rawgit.com/nbeaumont/gcal-feed-reader/master/index.html)
 
