@@ -1,3 +1,12 @@
+### Adobe ###
+# Adobe Source Files
+*.psd
+*.ai
+*.indd
+*.prproj
+*.aep
+
+### Dreamweaver ###
 # DW Dreamweaver added files
 _notes
 _compareTemp
@@ -6,7 +15,7 @@ dwsync.xml
 dw_php_codehinting.config
 *.mno
 
-#macOs
+### macOS ###
 *.DS_Store
 .AppleDouble
 .LSOverride
