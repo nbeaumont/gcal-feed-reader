@@ -9,12 +9,11 @@ It is based on bradoyler's [GoogleCalReader-jquery-plugin](https://github.com/br
 ## Features
 
 *   Displays a list of upcoming events in a descending order, and a list of past events in an ascending order.
-
+*   Supports single and recurring events, events spanned over several days, and all day events.
 *   Converts automatically the title of each event into an absolute link to the event in the Google Calendar Web UI.
-
 *   Converts automatically URLs in plain-text into HTML links, and masks email addresses to protect them from spam bots.
-
 *   Converts automatically each event address into a HTML link to a Google map.
+*   Is fully customizable with CSS.
 
 ## [Demo](http://htmlpreview.github.io/?https://rawgit.com/nbeaumont/gcal-feed-reader/master/index.html)
 
