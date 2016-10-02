@@ -1,5 +1,7 @@
 #### nbeaumont.github.io
 
+http://www.nicolasbeaumont.com/engraving/blog/?page_id=471
+
 # Google Public Calendar Feed Reader
 
 A jQuery plugin to format and display public Google calendar feeds as a list of events on a webpage, using the [Google Calendar API V3](https://developers.google.com/google-apps/calendar/?hl=en).
