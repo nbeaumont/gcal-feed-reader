@@ -1,7 +1,5 @@
 #### nbeaumont.github.io
 
-http://www.nicolasbeaumont.com/engraving/blog/?page_id=471
-
 # Google Public Calendar Feed Reader
 
 A jQuery plugin to format and display public Google calendar feeds as a list of events on a webpage, using the [Google Calendar API V3](https://developers.google.com/google-apps/calendar/?hl=en).
@@ -17,7 +15,10 @@ It is based on bradoyler's [GoogleCalReader-jquery-plugin](https://github.com/br
 *   Converts automatically each event address into a HTML link to a Google map.
 *   Is fully customizable with CSS.
 
-## [Demo](http://htmlpreview.github.io/?https://rawgit.com/nbeaumont/gcal-feed-reader/master/index.html)
+## Demo
+
+*   [Github](http://htmlpreview.github.io/?https://rawgit.com/nbeaumont/gcal-feed-reader/master/index.html)
+*   [Website](http://www.nicolasbeaumont.com/engraving/blog/?page_id=471)
 
 ## Dependencies
 
